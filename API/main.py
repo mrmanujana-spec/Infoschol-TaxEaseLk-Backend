@@ -1,3 +1,8 @@
 from fastapi import FastAPI
 
-Taxeaselk = FastAPI()
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    return {"message": "TaxEaseLK API is working!"}
