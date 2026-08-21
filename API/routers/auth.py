@@ -102,3 +102,24 @@ def login(
         "email": user.email,
         "role": user.role
     }
+from pydantic import BaseModel
+
+
+class ForgotPasswordRequest(BaseModel):
+    email: str
+
+
+@router.post("/forgot-password")
+def forgot_password(user_data: ForgotPasswordRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.email == user_data.email).first()
+
+    if not user:
+        raise HTTPException(
+            status_code=404,
+            detail="User not found"
+        )
+
+    return {
+        "message": "Password reset request successful",
+        "email": user.email
+    }
