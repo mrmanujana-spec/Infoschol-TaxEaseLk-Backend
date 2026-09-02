@@ -1,0 +1,8 @@
+{
+  "name": "TaxEaseLK Platform",
+  "description": "Corporate Tax Document & Auditor Collaboration Platform for Sri Lankan Pvt Ltd companies with dual Business & Auditor workspaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
